@@ -50,20 +50,22 @@
   <!-- Add background and its colour -->
   <body style="background-color:#FFF7FA; background-image: url(./desktop.png.jpg); background-size: cover;">
 
-    <div style="background-color: #FFF7FA; position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: fit-content; border: solid #956E78;">
+    <div style="background-color: #FFF7FA; position: absolute; top: 105%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: 900; border: solid #956E78; border-radius: 20px">
     <!-- Center all objects -->
     <center>
-
+      
        <!-- Add Spiral png as div to align leftwards -->
       <div style="float: left; margin-right: 20px;">
-        <img src="./spiral.png" width="43" height="900" align="left"/>
+        <img src="./spiral (1).png" width="43" height="900" align="left"/>
       </div>
       
       <!-- Add title, font and its colour -->
-      <h1 style="color:#EB91A8; font-family:Georgia, 'Times New Roman', Times, serif"> <em>Welcome to Niya's OS!</em></h1>
+      <h1 style="color:#EB91A8; font-family:Georgia, 'Times New Roman', Times, serif"> <br> <em>Welcome to Niya's OS!</em></h1>
       
       <!-- Add intro, font, and colour -->
-      <h3 style="font-family:'Cedarville Cursive'"> Secret Diary <br> 🎀 </p>
+      <h3 style="font-family:'Cedarville Cursive'"> Secret Diary</h3>
+
+      
       
       <!-- Add MyMelody image, size and its border -->
       <img src="./mymelody.png" style="border:4px solid #FFE3EA" width="205" height="150"/>
@@ -79,7 +81,7 @@
         
       <div style="color: black;background-color: #FFE3EA  ;height:100px;width:300px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"> 
       28/11/2007 <br> <b> Entry 01 </b> <br> <em>
-        Hi. I'm Niya. Welcome to my diary, where you can find all of my coding projects I have , currently am, and will ever create. Of course, what's a diary without a little bit about me? Currently (June 30th 2024), I'm a 16 year old English-South African-Canadian Indian (not really, I've just lived in those places) who lives in Canada with her family and precious 2 kitties. Not sure why I said currently. Hopefully I don't become an alien. lol
+        Hi. I'm Niya. Welcome to my diary, where you can find all of my coding projects I have , currently am, and will ever create. Of course, what's a diary without a little bit about me? I like to paint, read, and spend time with my cats, but above all: learn to code. I also love pink if you couldn't tell. I'm just a beginner-level coder, but hopefully I pick up some stuff before senior year. lol
       </em>
       </div>
       
@@ -91,14 +93,15 @@
     </div> 
     <!-- Top bar -->
     <div style="position: absolute; width: 100%; display: flex; background-color: lightpink; color: #fff; justify-content: space-between; display: flex; justify-content: space-between; font:Arial">
-        <p style="margin-left: 16px;">
-            NiyaOS
-        </p> 
-        <p style="margin-right: 16px;">
-            3:30 AM 
-        </p>
+      <p style="margin-left: 16px;">
+        NiyaOS
+      </p>
+      <p id="timeElement" style="(color: white)">
+        4:29
+      </p>
     </div>
 
+    
     <script>
       function updateTime() {
           var currentTime = new Date().toLocaleString();
