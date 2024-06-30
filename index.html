@@ -50,7 +50,7 @@
   <!-- Add background and its colour -->
   <body style="background-color:#FFF7FA; background-image: url(./desktop.png.jpg); background-size: cover;">
 
-    <div style="background-color: #FFF7FA; position: absolute; top: 105%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: 900; border: solid #956E78; border-radius: 20px">
+    <div id="welcome" style="background-color: #FFF7FA; position: absolute; top: 105%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: 900; border: solid #956E78; border-radius: 20px">
     <!-- Center all objects -->
     <center>
       
@@ -92,15 +92,14 @@
     </center>
     </div> 
     <!-- Top bar -->
-    <div style="position: absolute; width: 100%; display: flex; background-color: lightpink; color: #fff; justify-content: space-between; display: flex; justify-content: space-between; font:Arial">
+    <div style="position: absolute; width: 100%; display: flex; background-color: #EB91A8; color: #fff; justify-content: space-between; display: flex; justify-content: space-between; font:Arial">
       <p style="margin-left: 16px;">
         NiyaOS
       </p>
       <p id="timeElement" style="(color: white)">
         4:29
       </p>
-    </div>
-
+    </div>   
     
     <script>
       function updateTime() {
@@ -110,7 +109,8 @@
       }
       setInterval(updateTime, 1000);
     </script>
-    
+
+    <script src="script.js"></script>
     
   </body>
 
