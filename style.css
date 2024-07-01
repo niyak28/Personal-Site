@@ -2,3 +2,30 @@ html {
   height: 100%;
   width: 100%;
 }
+
+
+
+.window {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  position: absolute;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.windowheader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.headertext {
+  margin: 0px;
+  color: #fff;
+  font-weight: 500
+}

@@ -62,25 +62,19 @@ function dragElement(element) {
 }
 
 
-var welcomeScreen = document.querySelector("#welcome")
+document.addEventListener("DOMContentLoaded", function() {
+  var openButton = document.getElementById("welcomeopen");
+  var closeButton = document.getElementById("welcomeclose");
+  var welcomeDiv = document.getElementById("welcome");
 
-// create window-closing function //
-function closeWindow(element) {
-  element.style.display = "none"
-}
+  // Initially hide the welcome div
+  welcomeDiv.style.display = "none";
 
-// create window-opening function //
-function openWindow(element) {
-  element.style.display = "flex"
-}
+  openButton.addEventListener("click", function() {
+    welcomeDiv.style.display = "block";
+  });
 
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
-welcomeScreenClose.addEventListener("click", function() {
-  closeWindow(welcomeScreen);
-});
-
-welcomeScreenOpen.addEventListener("click", function() {
-  openWindow(welcomeScreen);
+  closeButton.addEventListener("click", function() {
+    welcomeDiv.style.display = "none";
+  });
 });
