@@ -78,3 +78,26 @@ document.addEventListener("DOMContentLoaded", function() {
     welcomeDiv.style.display = "none";
   });
 });
+
+
+document.getElementById("welcomeopen").onclick = function () {
+  document.getElementById("welcome").style.display = 'block';
+}
+
+document.getElementById("welcomeclose").onclick = function () {
+  document.getElementById("welcome").style.display = 'none';
+}
+
+
+// storing what the blog button is/does code:
+var selectedIcon = undefined
+
+
+function handleIconTap(element) {
+  if (element.classList.contains ("selected")) {
+    deselectIcon(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
+}

@@ -26,6 +26,7 @@
     <script type="module" src="./script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     
+    
   </head>
 
   <h3 style="color: lightpink">
@@ -53,17 +54,22 @@
   </style>
   
   <!-- Add background and its colour -->
-  <body style="background-color:#FFF7FA; background-image: url(./desktop.png.jpg); background-size: cover;">
+  <body style="background-color:#FFF7FA; background-image: url(./desktop.png.jpg); background-size: cover; 100vh; background-size: cover; background-repeat: no-repeat; margin: 0px;">
+
 
     <!-- Add closeable window -->
-    <div id="welcome" style="background-color: #FFF7FA; position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: 900; border: solid #956E78; border-radius: 20px">
+    <div id="welcome" style="background-color: #FFF7FA; position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 675px; height: 900; border: solid #956E78; border-radius: 20px; display: none;">
 
     
     <!-- Add moving button -->
-    <img src="./mouse.png" id="welcomeheader" style="margin-left: 575px; margin-bottom: -80px;  height: 35px"> 
+    <div class="selected">
+      <img src="./mouse.png" id="welcomeheader" style="margin-left: 575px; margin-bottom: -80px;  height: 35px"> 
+    </div>
 
     <!-- Add close button -->
-    <img src="./close.png" style="cursor: pointer; margin-left: 625px; margin-bottom: -58px; height: 30px" id="welcomeclose">
+    <div class="selected">
+      <img src="./close.png" style="cursor: pointer; margin-left: 625px; margin-bottom: -58px; height: 30px" id="welcomeclose">
+    </div>
       
     <!-- Center all objects -->
     <center>
@@ -113,7 +119,10 @@
       
       <!-- Set open button -->
       <center>
-        <img src="./open.png" style="margin-top:10px; pointer; height: 40px" id="welcomeopen">
+        <div class="selected">
+         <img src="./open.png" style="margin-top:10px; pointer; height: 40px" id="welcomeopen"> 
+        </div>
+        
       </center>
 
       <!-- Add time & date -->
@@ -132,6 +141,15 @@
     </script>
 
     <script src="script.js"></script>
+
+    <!-- Add blogging div -->
+    <div class="selected" id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+      <div style="text-align: center; padding: 16px; width: fit-content">
+        <img src="./blog.png" <center>
+          <p style="margin: 0px; color: black; font-size: 13px">Diary Entries</p>
+        </center>
+      </div>
+    </div>
     
   </body>
 
