@@ -92,6 +92,15 @@ document.getElementById("welcomeclose").onclick = function () {
 // storing what the blog button is/does code:
 var selectedIcon = undefined
 
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element
+} 
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined
+} 
 
 function handleIconTap(element) {
   if (element.classList.contains ("selected")) {
@@ -101,3 +110,6 @@ function handleIconTap(element) {
     selectIcon(element)
   }
 }
+/* making blog draggable */
+dragElement(document.querySelector("#notes"))
+
