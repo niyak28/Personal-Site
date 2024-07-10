@@ -6,25 +6,29 @@ function updateTime() {
 setInterval(updateTime, 1000);
 
 
-// Make the DIV element draggable:
+// Make Welcome Div draggable:
 dragElement(document.getElementById("welcome"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
   // Step 2: Set up variables to keep track of the element's position.
-  var initialX = 0;
-  var initialY = 0;
-  var currentX = 0;
-  var currentY = 0;
+  let initialX = 0;
+  let initialY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  console.log("making " + element + "Draggable")
 
   // Step 3: Check if there is a special header element associated with the draggable element.
   if (document.getElementById(element.id + "header")) {
     // Step 4: If present, assign the `dragMouseDown` function to the header's `onmousedown` event.
     // This allows you to drag the window around by its header.
     document.getElementById(element.id + "header").onmousedown = startDragging;
+    console.log("adding startDragging to " + element.id + "'s header");
   } else {
     // Step 5: If not present, assign the function directly to the draggable element's `onmousedown` event.
     // This allows you to drag the window by holding down anywhere on the window.
+    console.log('adding startDragging to elem', element);
     element.onmousedown = startDragging;
   }
 
@@ -37,21 +41,26 @@ function dragElement(element) {
     initialY = e.clientY;
     // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
     document.onmouseup = stopDragging;
-    document.onmousemove = dragElement;
+    document.onmousemove = elementDrag;
   }
-
   // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
-  function dragElement(e) {
+  function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    // Step 10: Calculate the new cursor position.
+    console.log('initial coords', currentX, currentY, initialX, initialY);
+    console.log("initial top", element.offsetTop, "initial left", element.offsetLeft);
+    // Step 10: Calculate the new cursor position
+    console.log("mouse pos", e.clientX, e.clientY);
     currentX = initialX - e.clientX;
     currentY = initialY - e.clientY;
     initialX = e.clientX;
     initialY = e.clientY;
+    console.log('new pos', currentX, currentY, initialY, initialY);
+    console.log("top calc", element.offsetTop, "left calc", element.offsetLeft);
     // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
     element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
+    console.log('new top and left', element.style.top, element.style.left);
   }
 
   // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
@@ -80,11 +89,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.getElementById("welcomeopen").onclick = function () {
+document.getElementById("welcomeopen").onclick = function() {
   document.getElementById("welcome").style.display = 'block';
 }
 
-document.getElementById("welcomeclose").onclick = function () {
+document.getElementById("welcomeclose").onclick = function() {
   document.getElementById("welcome").style.display = 'none';
 }
 
@@ -95,21 +104,22 @@ var selectedIcon = undefined
 function selectIcon(element) {
   element.classList.add("selected");
   selectedIcon = element
-} 
+}
 
 function deselectIcon(element) {
   element.classList.remove("selected");
   selectedIcon = undefined
-} 
+}
 
 function handleIconTap(element) {
-  if (element.classList.contains ("selected")) {
+  if (element.classList.contains("selected")) {
     deselectIcon(element)
     openWindow(window)
   } else {
     selectIcon(element)
   }
 }
-/* making blog draggable */
-dragElement(document.querySelector("#notes"))
+/* making Window 2 draggable */
+console.log('notes exists', document.querySelector("#notes"));
+dragElement(document.querySelector("#notes"));
 
