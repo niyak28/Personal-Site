@@ -12,14 +12,6 @@
       body {
         font-family: Georgia;
       }
-      .computer {
-      height: 500px;
-      max-height: 16.67%;
-      width: 50%;
-      border: 5px outset #404040;
-      background-color: #91BFCC;
-      text-align: center;
-      }
     </style>
 
     <!-- Link HTML file to CSS file -->
@@ -140,8 +132,8 @@
     <script src="script.js"></script>
 
     <!-- Desktop Apps -->
-      <div class="selected" id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
-      <div>
+    <div class="selected" id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+      <div onclick="openDiaryEntries()">
         <!-- Add Diary Entries icon and label -->
         <img src="/blog.png">
         <p style="color: black; margin-top: -2px; font-size: 14px;">Diary Entries</p>
@@ -149,9 +141,11 @@
     </div>
 
     <!-- Add Diary Entries window -->
-    <div class="window" id="notes" style="background-color: lightpink; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 500px; height: 400px; border: solid #956E78; border-radius: 20px;">
+    <div class="window" id="notes" style="background-color: lightpink; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 500px; height: 400px; border: solid #956E78; border-radius: 20px; display: none">
       <div class="windowheader" id="notesheader">
         <div class="closebutton" id="notesclose">
+        </div>
+        <div class="openbutton" id="notesopen">
         </div>
 
         <!-- Add Diary entries title -->
@@ -163,7 +157,6 @@
         <center>
           <p>౨ৎ Coding Log ౨ৎ</p>
         </center>
-      </div>
       </div>
       </div>
 

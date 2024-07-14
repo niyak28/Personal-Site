@@ -70,7 +70,6 @@ function dragElement(element) {
   }
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
   var openButton = document.getElementById("welcomeopen");
   var closeButton = document.getElementById("welcomeclose");
@@ -96,15 +95,17 @@ document.getElementById("welcomeopen").onclick = function() {
 document.getElementById("welcomeclose").onclick = function() {
   document.getElementById("welcome").style.display = 'none';
 }
-
+//////////////////////////////////////////////////////////////
 
 // storing what the blog button is/does code:
-var selectedIcon = undefined
+var selectedIcon = undefined;
+console.log(selectedIcon);
 
 function selectIcon(element) {
   element.classList.add("selected");
   selectedIcon = element
 }
+console.log(selectedIcon);
 
 function deselectIcon(element) {
   element.classList.remove("selected");
@@ -119,7 +120,27 @@ function handleIconTap(element) {
     selectIcon(element)
   }
 }
+console.log(selectedIcon);
 /* making Window 2 draggable */
 console.log('notes exists', document.querySelector("#notes"));
 dragElement(document.querySelector("#notes"));
 
+// making blogwindow/Window 2 closeable //
+var notesScreen = document.querySelector("#notes")
+
+var notesScreenClose = document.querySelector("#notesclose")
+
+notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+
+// open diary entries window on diary entries icon click //
+function openDiaryEntries() {
+  var diaryEntries = document.getElementById("notes");
+  diaryEntries.style.display = "block";
+}
+
+// event listener for blog/diary entries icon //
+document.addEventListener("DOMContentLoaded", function() {
+  // Event listener for the blog icon
+  var blogIcon = document.querySelector("#desktopApps div");
+  blogIcon.addEventListener("click", openDiaryEntries);
+});
