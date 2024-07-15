@@ -141,17 +141,26 @@
     </div>
 
     <!-- Add Diary Entries window -->
-    <div class="window" id="notes" style="background-color: lightpink; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 500px; height: 400px; border: solid #956E78; border-radius: 20px; display: none">
-      <div class="windowheader" id="notesheader">
+    <div class="window" id="notes" style="background-color: lightpink; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); padding: 20px; width: 500px; height: 600px; border: solid #956E78; border-radius: 20px; display: none">
+        <!-- Add moving button -->
+          <div class="selected" id="notesheader">
+            <img src="./mouseblog.png" style="height: 35px;  margin-left: 420px; margin-bottom: -35px"> 
+          </div>
+      
         <div class="closebutton" id="notesclose">
         </div>
         <div class="openbutton" id="notesopen">
         </div>
 
+        <!-- Add close button -->
+        <div class="selected" id="diaryclose" >
+          <img src="./closeblog.png" style="cursor: pointer; height: 30px; margin-left: 463px; margin-bottom: -5px;">
+        </div>
+
         <!-- Add Diary entries title -->
         <h1 class="headercenter"><em>Diary Entries</em></h1>
-        <div style="color:white; font-family:Georgia, 'Times New Roman', Times, serif" class="headertext"></div>
-      </div>
+        <div style="color:white; font-family:Georgia, 'Times New Roman', Times, serif"></div>
+        
       <!-- Add coding log subtitle -->
       <div class="subcenter" style="font-family:'Cedarville Cursive'; color: #FFF7FA;">
         <center>

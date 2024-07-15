@@ -146,8 +146,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // making diary entries window closeable //
-var welcomeScreen = document.querySelector("#notes")
+function closeDiaryEntries() {
+  var diaryEntries = document.getElementById("notes");
+  diaryEntries.style.display = "none";
+}
 
-var notesScreenClose = document.querySelector("#notesclose")
-
-notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+document.getElementById("diaryclose").onclick = closeDiaryEntries;
