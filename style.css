@@ -77,3 +77,24 @@ html {
   margin-bottom: 8px;
 }
 
+/* center header titles/texts */
+.headercenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  color: white;
+  margin-top: 2px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* center subtitles/texts */
+.subcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -27px;
+  width: 100%;
+}

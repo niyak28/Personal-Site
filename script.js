@@ -144,3 +144,10 @@ document.addEventListener("DOMContentLoaded", function() {
   var blogIcon = document.querySelector("#desktopApps div");
   blogIcon.addEventListener("click", openDiaryEntries);
 });
+
+// making diary entries window closeable //
+var welcomeScreen = document.querySelector("#notes")
+
+var notesScreenClose = document.querySelector("#notesclose")
+
+notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
