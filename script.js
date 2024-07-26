@@ -8,8 +8,9 @@ setInterval(updateTime, 1000);
 
 // Make Welcome Div draggable:
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("notes"));
 
-// Step 1: Define a function called `dragElement` that makes an HTML element draggable.
+// Step 1: Define a function called dragElement that makes an HTML element draggable.
 function dragElement(element) {
   // Step 2: Set up variables to keep track of the element's position.
   let initialX = 0;
@@ -21,29 +22,29 @@ function dragElement(element) {
 
   // Step 3: Check if there is a special header element associated with the draggable element.
   if (document.getElementById(element.id + "header")) {
-    // Step 4: If present, assign the `dragMouseDown` function to the header's `onmousedown` event.
+    // Step 4: If present, assign the dragMouseDown function to the header's onmousedown event.
     // This allows you to drag the window around by its header.
     document.getElementById(element.id + "header").onmousedown = startDragging;
     console.log("adding startDragging to " + element.id + "'s header");
   } else {
-    // Step 5: If not present, assign the function directly to the draggable element's `onmousedown` event.
+    // Step 5: If not present, assign the function directly to the draggable element's onmousedown event.
     // This allows you to drag the window by holding down anywhere on the window.
     console.log('adding startDragging to elem', element);
     element.onmousedown = startDragging;
   }
 
-  // Step 6: Define the `startDragging` function to capture the initial mouse position and set up event listeners.
+  // Step 6: Define the startDragging function to capture the initial mouse position and set up event listeners.
   function startDragging(e) {
     e = e || window.event;
     e.preventDefault();
     // Step 7: Get the mouse cursor position at startup.
     initialX = e.clientX;
     initialY = e.clientY;
-    // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
+    // Step 8: Set up event listeners for mouse movement (elementDrag) and mouse button release (closeDragElement).
     document.onmouseup = stopDragging;
     document.onmousemove = elementDrag;
   }
-  // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
+  // Step 9: Define the elementDrag function to calculate the new position of the element based on mouse movement.
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
@@ -57,13 +58,13 @@ function dragElement(element) {
     initialY = e.clientY;
     console.log('new pos', currentX, currentY, initialY, initialY);
     console.log("top calc", element.offsetTop, "left calc", element.offsetLeft);
-    // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
+    // Step 11: Update the element's new position by modifying its top and left CSS properties.
     element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
     console.log('new top and left', element.style.top, element.style.left);
   }
 
-  // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
+  // Step 12: Define the stopDragging function to stop tracking mouse movement by removing the event listeners.
   function stopDragging() {
     document.onmouseup = null;
     document.onmousemove = null;
@@ -86,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
     welcomeDiv.style.display = "none";
   });
 });
-
 
 document.getElementById("welcomeopen").onclick = function() {
   document.getElementById("welcome").style.display = 'block';
@@ -152,3 +152,31 @@ function closeDiaryEntries() {
 }
 
 document.getElementById("diaryclose").onclick = closeDiaryEntries;
+/////////////////////
+
+// Variable to keep track of the highest z-index
+var biggest = 1;
+
+// Function to bring the clicked window to the top
+function forward(element) {
+  biggest++;
+  element.style.zIndex = biggest;
+}
+
+// Apply this function to your windows
+document.getElementById("welcome").addEventListener("mousedown", function() {
+  forward(this);
+});
+
+document.getElementById("notes").addEventListener("mousedown", function() {
+  forward(this);
+});
+
+
+// combine functions into one for initializing new windows
+function intialize(elementName) {
+  var screen = document.querySelector("#" + elementName)
+  forward(screen)
+  makeClosable(screen)
+  dragElement(screen)
+}
