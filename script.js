@@ -180,3 +180,18 @@ function intialize(elementName) {
   makeClosable(screen)
   dragElement(screen)
 }
+
+// play music on click of bowhamster.png
+var audio = new Audio('sadhamster.mp3');
+var bowhamster = document.getElementById('bowhamster');
+var hamsterClick = 0;
+if (bowhamster) { // Check if the element exists
+  bowhamster.addEventListener('click', function() {
+    hamsterClick += 1;
+    if (hamsterClick % 2 === 0) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+}
