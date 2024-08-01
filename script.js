@@ -132,20 +132,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Store content of first post  
   var content = [
     {
-      title: "Welcome",
-      date: "06/28/2023",
+      title: "02 Test Entry",
+      date: "07/08/2022",
       content: `
-        <p contenteditable="true" style="background-color: lightpink; width: 348px; margin-top: -10px">
-          <span>asdfghjoihugyftdrsdzxfcgvhbjnkjbhvgcfxdzxcgvhbjhvgcxc</span>
-          <blockquote style="background-color: #ffc3cb; margin: 16px 0; padding: 16px; border-radius: 16px; font-family: monospace; font-size: 14px" contenteditable="true">
-            <b>yeuhifjefihf</b><br>
-            <i>~ Niya</i>
-          </blockquote>
-          <span contenteditable="true">awesrdtfyguhijoihugyft</span>
+        <p contenteditable="True">
+          This was the day my precious children came home
         </p>
         <div>
-          <p id="curve" style="font-family: monospace">click me!</p>
-          <img src="bowhamster.png" id="bowhamster" alt="Bow Hamster" style="width: 200px; margin-top: -60px"/>
+        <img src="02Addy.jpg" style="width: 200px; border-radius: 12px"/>
+        </div>
+        <div>
+          <img src="02Poppy.jpg" style="width: 200px; border-radius: 12px"/>
         </div>
       `
     },
@@ -175,8 +172,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var newDiv = document.createElement("div");
     newDiv.className = 'sidebar-item'; // Add this class
     newDiv.innerHTML = `
-      <p style="margin: 0;">${note.title}</p>
-      <p style="font-size: 12px; margin: 0;">${note.date}</p>
+       <p style="margin: 0; font-family: monospace; font-size: 15px"><b>${note.title}</b></p>
+       <p style="font-size: 15px; margin: 0; font-family: monospace;">${note.date}</p>
     `;
 
     newDiv.addEventListener("click", function() {
