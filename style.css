@@ -98,3 +98,9 @@ html {
   margin-top: -27px;
   width: 100%;
 }
+
+
+/* increase space between sidebar's blog titles */
+.sidebar-item {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}

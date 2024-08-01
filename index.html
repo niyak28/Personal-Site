@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
-
-    <!-- Add curve text file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/circletype/2.0.0/circletype.min.js"></script>
     
     <style>
       body {
@@ -172,22 +169,23 @@
             <p> <b>౨ৎ My Log ౨ৎ</b></p>
           </center>
         </div>
-      </center>      
+      </center> 
       
-      <!-- Add Diary entries blog entries tab --> 
-      <div style="background-color: #ffc3cb; width: 200px; padding: 16px; margin-left: -10px; border-radius: 16px; margin-top: -60px; height: 495px">
+      
+      <!-- Add Diary entries blog entries sidebar --> 
+      <div id="sidebar" style="background-color: #ffc3cb; width: 200px; padding: 16px; margin-left: -10px; border-radius: 16px; margin-top: -60px; height: 495px">
         <!-- Add Diary entries title -->
         <p1 style="colour:#da7585; font-size: 15px;font-family: monospace;" contenteditable="True"><b>Diary Entries</b><br>26/07/2024</p1>
         <div style="color:332A2B; font-family:Georgia, 'Times New Roman', Times, serif"></div> 
-      <!-- close Diary entries blog tab div -->
+      <!-- close Diary entries blog sidebar -->
       </div>  
 
-      <!-- Add Diary entries writing tab div --> 
-      <div style="background-color: lightpink; width: 340px; padding: 16px; margin-left: 230px; border-radius: 16px; margin-top: -480px; height: 445px; overflow:auto;">
+      <!-- Add Diary entries swappable writing tab div --> 
+      <div id="noteContent" style="background-color: lightpink; width: 340px; padding: 16px;position: absolute; margin-left: 230px; border-radius: 16px; margin-top: -480px; height: 445px; overflow:auto;">
         <!-- Add this is my blog writing section -->
         <div>
             <p contenteditable="true" style="background-color: lightpink;  width: 348px; margin-top: -10px">
-              <span>Here, you can enjoy my ramblings (<i>that is, if i'm not too lazy to type them out</i>) on my day to day life, wonderful cats, 'hot goss', coding projects, and tbh just anything that piqued my interest and could maybe pique urs <3</span>
+              <span>Here, you can enjoy my ramblings (<i>that is, if i'm not too lazy to type them out</i>) on my day to day life, wonderful cats, coding projects, and tbh just anything that piqued my interest and could maybe pique urs <3</span>
 
         <!-- Add quote -->    
         <blockquote
@@ -200,7 +198,7 @@
             </i>
           </blockquote>
           <span contenteditable="true">
-            I guess it all started 16 years ago (<i>don't mind my brief, angsty (?) soliloquy, it's like essential for a diary</i>) in Reading, England. 
+            I guess it all started 16 years ago (<i>don't mind my brief soliloquy, it's like essential for a diary</i>) in Reading, England. 
           </span>
           </p>
         </div>
@@ -211,16 +209,14 @@
           <p id="curve" style="font-family: monospace">click me!</p>
           <img src="bowhamster.png" id="bowhamster" src="bowhamster.png" alt="Bow Hamster" style="width: 200px; margin-top: -60px"/>
         </div>
-        
-      <!-- close Diary entries writing tab div -->
+
+      <!-- close Diary entries swappable writing tab div -->
       </div>
 
       
-      
     <!-- close diary entries div -->
     </div>
- 
-       
+  <script src="script.js"></script>
   </body>
 
 </html>
