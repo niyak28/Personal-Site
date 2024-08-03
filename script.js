@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Make Welcome Div draggable:
   dragElement(document.getElementById("welcome"));
   dragElement(document.getElementById("notes"));
+   dragElement(document.getElementById("music"));
 
   // Step 1: Define a function called dragElement that makes an HTML element draggable.
   function dragElement(element) {
@@ -70,22 +71,39 @@ document.addEventListener("DOMContentLoaded", function() {
   closeButton.addEventListener("click", function() {
     welcomeDiv.style.display = "none";
   });
-
+////////
   // Event listener for the blog icon
-  var blogIcon = document.querySelector("#desktopApps div");
+  var blogIcon = document.querySelector("#openDiary");
   blogIcon.addEventListener("click", openDiaryEntries);
 
+  // Event listener for the music icon
+  var blogIcon = document.querySelector("#openMusic");
+  blogIcon.addEventListener("click", openMusic);
+///////
   // making diary entries window closeable //
   document.getElementById("diaryclose").onclick = closeDiaryEntries;
 
+  // making music window closeable //
+  document.getElementById("musicclose").onclick = closeMusic;
+///////
   function openDiaryEntries() {
     var diaryEntries = document.getElementById("notes");
     diaryEntries.style.display = "block";
   }
 
+  function openMusic() {
+    var music = document.getElementById("music");
+    music.style.display = "block";
+  }
+
   function closeDiaryEntries() {
     var diaryEntries = document.getElementById("notes");
     diaryEntries.style.display = "none";
+  }
+  
+  function closeMusic() {
+    var music = document.getElementById("music");
+    music.style.display = "none";
   }
 
   // Variable to keep track of the highest z-index
