@@ -120,9 +120,13 @@ document.addEventListener("DOMContentLoaded", function() {
     forward(this);
   });
 
-  document.getElementById("notes").addEventListener("mousedown", function() {
-    forward(this);
-  });
+document.getElementById("notes").addEventListener("mousedown", function() {
+  forward(this);
+});
+
+document.getElementById("music").addEventListener("mousedown", function() {
+  forward(this);
+});
 
   // combine functions into one for initializing new windows
   function initialize(elementName) {
