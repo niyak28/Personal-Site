@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
     element.style.zIndex = biggest;
   }
 
-  // Apply this function to your windows
+  // Apply this function to each new tab
   document.getElementById("welcome").addEventListener("mousedown", function() {
     forward(this);
   });
